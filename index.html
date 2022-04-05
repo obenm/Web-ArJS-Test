@@ -54,11 +54,12 @@
 			var result = 'value: ' + diffDays + '; font: ../Pacifico_Regular.json;';
 			$("#daysCount").attr('text-geometry', result);
 			
-			var oneMonth = 30*24*60*60*1000; // days*hours*minutes*seconds*milliseconds
-			var diffMonth = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneMonth)));
-			
 			var oneYear = 365*24*60*60*1000; // days*hours*minutes*seconds*milliseconds
 			var diffYears = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneYear)));
+			
+			var oneMonth = 30*24*60*60*1000; // days*hours*minutes*seconds*milliseconds
+			var diffMonth = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneMonth)));
+			diffMont = diffMont % 12;
 			result = 'value: ' + diffYears + ' years - ' + diffMonth + 'meses; font: ../Pacifico_Regular.json;';
 			$("#yearMonthCount").attr('text-geometry', result);
 			
